@@ -1,0 +1,5 @@
+#!/bin/bash
+
+BOOT_DEV=$IMAGE_BLOCK_DEVICE
+echo "Re-installing grub"
+/usr/sbin/grub-install '--modules=part_msdos part_gpt lvm' --target=x86_64-efi "$BOOT_DEV" || :
